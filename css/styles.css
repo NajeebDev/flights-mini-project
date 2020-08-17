@@ -1,0 +1,328 @@
+
+/* General setting */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+    margin: 80px auto;
+    max-width: 1000px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background-image: url(/img/703254.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* freeze background-image when scroll down */
+    height: 100vh;
+}
+
+
+/* Start main Navigation bar */
+#header{
+    border-top-left-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    background-color: #05164d;
+    color: white;
+    padding: 5px;
+}
+
+#logo{
+    border-top-left-radius: 15px;
+    height: 45px;
+    box-shadow: 2px 2px orange;
+}
+
+.nav{
+    list-style-type: none;
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.nav li a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+    padding: 0 10px;
+    /* border: 1px solid red; */
+    height: 50px;
+    text-decoration: none;
+    color: #fff;
+    font-size: large;
+}
+
+.nav li a:hover{
+    border-bottom: 2px solid orange;
+    color: orange;
+    /* background-color: #e2e6f5;
+    border-radius: 10px; */
+}
+
+.hidden{
+    display: none;
+}
+
+/* Start Form Submit */
+.main{
+    background-color: #e2e6f5;
+    width: 100%;
+    padding: 5px;
+    border-bottom-right-radius: 35px;
+}
+
+select{
+    height: 25px;
+}
+
+
+#form-submit{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap: 15px;
+}
+
+.input-from,
+.input-to,
+.input-dep-date,
+.input-ret-date,
+.trip-select,
+.class-select,
+.age-select{
+background-color: #cdd6f8;
+padding: 15px;
+border-radius: 5px;
+}
+
+#from-dropdown,
+#to-dropdown{
+    width: 100%;
+}
+
+
+.head{
+    margin: 0;
+    padding: 20px 0 0 20px;
+  }
+
+#form-submit{
+    padding: 20px;
+}
+
+#form-submit > div{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+}
+
+
+.flex{
+    display: flex;
+}
+
+
+.btn{
+    height: 50px;
+    background-color: #05164d;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 0px;
+    /* border-bottom-right-radius: 12px; */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px orange;
+}
+
+.btn:hover{
+    color: orange;
+    font-size: 25px;
+    margin: 0;
+}
+
+#help-section{
+    margin: 10px 30px;
+}
+
+
+.flights-results{
+    list-style-type: none;
+    background-color: #cdd6f8;
+    padding: 10px;
+    margin: 15px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.no-flights{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    body{
+        margin: 0;
+        background-image: none;
+        max-width: unset;
+        width: 100vw;
+        height: 100%;
+    }
+
+    #header{
+        border-top-left-radius: 0;
+        width: 100vw;
+    }
+    
+    
+    .nav{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: none;
+        border: 1px solid red;
+    }
+
+    #form-submit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+
+    .input-from,
+    .input-to,
+    .input-dep-date,
+    .input-ret-date,
+    .trip-select,
+    .class-select,
+    .age-select{
+    background-color: #cdd6f8;
+    padding: 15px;
+    border-radius: 5px;
+    width: 80vw;
+    }
+
+
+    .head{
+        margin: 0;
+        padding: 10px 0 0 10px;
+    }
+
+    #form-submit{
+        padding: 10px;
+    }
+
+    #form-submit > div{
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        flex-direction: column;
+    }
+
+    .btn{
+        width: 85vw;
+        margin: 0;
+    }
+
+    .btn:hover{
+        color: orange;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    #help-section{
+        margin: 10px;
+    }
+
+
+}
+
+@media (min-width:601px) and (max-width:768px){
+    body{
+        margin: 0;
+        background-image: none;
+        max-width: unset;
+        width: 100vw;
+        height: 100%;
+    }
+
+    #header{
+        border-top-left-radius: 0;
+        width: 100vw;
+    }
+    
+
+    .nav{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: none;
+        border: 1px solid red;
+    }
+
+    #form-submit{
+        display: grid;
+        /* justify-content: center;
+        align-items: center;
+        flex-direction: column; */
+    }
+
+    .input-from,
+    .input-to,
+    .input-dep-date,
+    .input-ret-date,
+    .trip-select,
+    .class-select,
+    .age-select{
+    width: 40vw;
+    }
+
+
+    .head{
+        margin: 0;
+        padding: 10px 0 0 10px;
+    }
+
+    #form-submit{
+        padding: 10px;
+    }
+
+    #form-submit > div{
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        flex-direction: column;
+    }
+
+    .btn:hover{
+        color: orange;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .btn{
+        width: 44vw;
+    }
+    #help-section{
+        margin: 10px;
+    }
+
+}
