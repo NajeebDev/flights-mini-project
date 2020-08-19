@@ -58,41 +58,46 @@ window.onload = function WindowLoad() { // load Home page
 // get airports gata from json file into (From) element
 let fromDropdown = document.getElementById('from-dropdown');
 
-fromDropdown.length = 0;
+function getDepAirports(){
 
-let fromOption = document.createElement('option');
-fromOption.text = 'Select a location';
+  fromDropdown.length = 0;
 
-fromDropdown.add(fromOption);
-fromDropdown.selectedIndex = 0;
-
-
-fetch('airportsData.json')  
-  .then(  
-    function(response) {  
-      if (response.status !== 200) {  
-        console.warn('Looks like there was a problem. Status Code: ' + 
-          response.status);  
-        return;  
-      }
-
-      // Examine the text in the response  
-      response.json().then(function(data) {  
-        let option;
-    
-    	for (let i = 0; i < data.length; i++) {
-          option = document.createElement('option');
-          option.className = 'from';
-      	  option.text = `${data[i].iataCode}, ${data[i].location}, ${data[i].country}`;
-      	  option.value = data[i].iataCode;
-      	  fromDropdown.add(option);
-    	}    
-      });  
-    }  
-  )  
-  .catch(function(err) {  
-    console.error('Fetch Error -', err);  
-  });
+  let fromOption = document.createElement('option');
+  fromOption.text = 'Select a location';
+  
+  fromDropdown.add(fromOption);
+  fromDropdown.selectedIndex = 0;
+  
+  
+  fetch('airportsData.json')  
+    .then(  
+      function(response) {  
+        if (response.status !== 200) {  
+          console.warn('Looks like there was a problem. Status Code: ' + 
+            response.status);  
+          return;  
+        }
+  
+        // Examine the text in the response  
+        response.json().then(function(data) {  
+          let option;
+      
+        for (let i = 0; i < data.length; i++) {
+            option = document.createElement('option');
+            option.className = 'from';
+            option.text = `${data[i].iataCode}, ${data[i].location}, ${data[i].country}`;
+            option.value = data[i].iataCode;
+            fromDropdown.add(option);
+        }    
+        });  
+      }  
+    )  
+    .catch(function(err) {  
+      console.error('Fetch Error -', err);  
+    });
+  
+}
+getDepAirports()
 //----------------------------------------------------------------
 
 
@@ -100,41 +105,45 @@ fetch('airportsData.json')
 // get airports data from json file into (To) element
 let toDropdown = document.getElementById('to-dropdown');
 
-toDropdown.length = 0;
+function getArrAirports(){
+  toDropdown.length = 0;
 
-let toOption = document.createElement('option');
-toOption.text = 'Select a location';
+  let toOption = document.createElement('option');
+  toOption.text = 'Select a location';
+  
+  toDropdown.add(toOption);
+  toDropdown.selectedIndex = 0;
+  
+  
+  fetch('airportsData.json')  
+    .then(  
+      function(response) {  
+        if (response.status !== 200) {  
+          console.warn('Looks like there was a problem. Status Code: ' + 
+            response.status);  
+          return;  
+        }
+  
+        // Examine the text in the response  
+        response.json().then(function(data) {  
+          let option;
+      
+        for (let i = 0; i < data.length; i++) {
+            option = document.createElement('option');
+            option.className = 'to';
+            option.text = `${data[i].iataCode}, ${data[i].location}, ${data[i].country}`;
+            option.value = data[i].iataCode;
+            toDropdown.add(option);
+        }    
+        });  
+      }  
+    )  
+    .catch(function(err) {  
+      console.error('Fetch Error -', err);  
+    });
+}
+getArrAirports()
 
-toDropdown.add(toOption);
-toDropdown.selectedIndex = 0;
-
-
-fetch('airportsData.json')  
-  .then(  
-    function(response) {  
-      if (response.status !== 200) {  
-        console.warn('Looks like there was a problem. Status Code: ' + 
-          response.status);  
-        return;  
-      }
-
-      // Examine the text in the response  
-      response.json().then(function(data) {  
-        let option;
-    
-    	for (let i = 0; i < data.length; i++) {
-          option = document.createElement('option');
-          option.className = 'to';
-      	  option.text = `${data[i].iataCode}, ${data[i].location}, ${data[i].country}`;
-      	  option.value = data[i].iataCode;
-      	  toDropdown.add(option);
-    	}    
-      });  
-    }  
-  )  
-  .catch(function(err) {  
-    console.error('Fetch Error -', err);  
-  });
 //----------------------------------------------------------------
 
 
@@ -158,7 +167,7 @@ const toSelect = document.getElementById('to-dropdown');
 
 toSelect.addEventListener('input', getToValue);
 
-function getToValue(e){ 
+function getToValue(){ 
   let arrAirport = fromSelect.options[toSelect.selectedIndex].value;
   console.log(`Arrival Airport: ${arrAirport}`);
   return arrAirport;
@@ -207,19 +216,10 @@ function getRetDate(){
 }
 
 
-// Get the Trip type (Eount Trip or One way)
+// Get the Trip type (Rount Trip or One way)
 
-// const radios = document.querySelector('input[name=trip]:checked').value;
-// console.log(radios);
 
-var rates = document.getElementsByName('trip');
-var rate_value;
-for(var i = 0; i < rates.length; i++){
-    if(rates[i].checked){
-        rate_value = rates[i].value;
-        console.log(rate_value);
-    } 
-}
+
 
 //----------------------------------------------------------------
 
@@ -295,12 +295,12 @@ function getflights(e){
 
 
 // Select a flight
-const selectFlightBtn = document.getElementById('select-flight-btn');
+// const selectFlightBtn = document.getElementById('select-flight-btn');
 
-selectFlightBtn.addEventListener('click', selectFlight);
+// selectFlightBtn.addEventListener('click', selectFlight);
 
-function selectFlight() {
-  document.getElementById('flights').classList.add("hidden"); 
-  document.getElementById('select-flight-btn').classList.remove(hidden);
-  document.getElementById('select-flight-btn').innerHTML = `<p> hallo</p>`;
-}
+// function selectFlight() {
+//   document.getElementById('flights').classList.remove("hidden"); 
+//   document.getElementById('select-flight-btn').classList.add(hidden);
+//   document.getElementById('select-flight-btn').innerHTML = `<p> hallo</p>`;
+// }
