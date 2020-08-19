@@ -151,7 +151,6 @@ border-radius: 5px;
 
 
 .flights-results{
-    list-style-type: none;
     background-color: #cdd6f8;
     padding: 10px;
     margin: 15px 20px;
@@ -161,8 +160,8 @@ border-radius: 5px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    justify-items: left;
     align-items: center;
-  
 }
 
 .no-flights{
@@ -171,6 +170,19 @@ border-radius: 5px;
     font-size: 20px;
 }
 
+.icon{
+    height: 25px;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.dep-icon,
+.arr-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
 @media (max-width: 600px) {
     body{
         margin: 0;

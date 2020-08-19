@@ -5,7 +5,7 @@ const loginSection = document.querySelector('#login');
 const signupSection = document.querySelector('#signup');
 const helpSection = document.querySelector('#help');
 
-function homeClick(){  // showing Home section.
+function homeClick() {  // showing Home section.
   document.querySelector("#home-section").classList.remove("hidden");
   document.querySelector("#help-section").classList.add("hidden");
   document.querySelector("#contact-section").classList.add("hidden");
@@ -14,7 +14,7 @@ function homeClick(){  // showing Home section.
 }
 homeSection.addEventListener('click', homeClick);
 
-function contactClick(){  // showing Contact section.
+function contactClick() {  // showing Contact section.
   document.querySelector("#home-section").classList.add("hidden");
   document.querySelector("#help-section").classList.add("hidden");
   document.querySelector("#contact-section").classList.remove("hidden");
@@ -23,7 +23,7 @@ function contactClick(){  // showing Contact section.
 }
 contactSection.addEventListener('click', contactClick);
 
-function loginClick(){  // showing Lonin section.
+function loginClick() {  // showing Lonin section.
   document.querySelector("#home-section").classList.add("hidden");
   document.querySelector("#help-section").classList.add("hidden");
   document.querySelector("#contact-section").classList.add("hidden");
@@ -32,7 +32,7 @@ function loginClick(){  // showing Lonin section.
 }
 loginSection.addEventListener('click', loginClick);
 
-function signupClick(){  // showing Sign up section.
+function signupClick() {  // showing Sign up section.
   document.querySelector("#home-section").classList.add("hidden");
   document.querySelector("#help-section").classList.add("hidden");
   document.querySelector("#contact-section").classList.add("hidden");
@@ -41,7 +41,7 @@ function signupClick(){  // showing Sign up section.
 }
 signupSection.addEventListener('click', signupClick);
 
-function helpClick(){  // showing Help section.
+function helpClick() {  // showing Help section.
   document.querySelector("#home-section").classList.add("hidden");
   document.querySelector("#help-section").classList.remove("hidden");
   document.querySelector("#contact-section").classList.add("hidden");
@@ -58,44 +58,44 @@ window.onload = function WindowLoad() { // load Home page
 // get airports gata from json file into (From) element
 let fromDropdown = document.getElementById('from-dropdown');
 
-function getDepAirports(){
+function getDepAirports() {
 
   fromDropdown.length = 0;
 
   let fromOption = document.createElement('option');
   fromOption.text = 'Select a location';
-  
+
   fromDropdown.add(fromOption);
   fromDropdown.selectedIndex = 0;
-  
-  
-  fetch('airportsData.json')  
-    .then(  
-      function(response) {  
-        if (response.status !== 200) {  
-          console.warn('Looks like there was a problem. Status Code: ' + 
-            response.status);  
-          return;  
+
+
+  fetch('airportsData.json')
+    .then(
+      function (response) {
+        if (response.status !== 200) {
+          console.warn('Looks like there was a problem. Status Code: ' +
+            response.status);
+          return;
         }
-  
+
         // Examine the text in the response  
-        response.json().then(function(data) {  
+        response.json().then(function (data) {
           let option;
-      
-        for (let i = 0; i < data.length; i++) {
+
+          for (let i = 0; i < data.length; i++) {
             option = document.createElement('option');
             option.className = 'from';
             option.text = `${data[i].iataCode}, ${data[i].location}, ${data[i].country}`;
             option.value = data[i].iataCode;
             fromDropdown.add(option);
-        }    
-        });  
-      }  
-    )  
-    .catch(function(err) {  
-      console.error('Fetch Error -', err);  
+          }
+        });
+      }
+    )
+    .catch(function (err) {
+      console.error('Fetch Error -', err);
     });
-  
+
 }
 getDepAirports()
 //----------------------------------------------------------------
@@ -105,41 +105,41 @@ getDepAirports()
 // get airports data from json file into (To) element
 let toDropdown = document.getElementById('to-dropdown');
 
-function getArrAirports(){
+function getArrAirports() {
   toDropdown.length = 0;
 
   let toOption = document.createElement('option');
   toOption.text = 'Select a location';
-  
+
   toDropdown.add(toOption);
   toDropdown.selectedIndex = 0;
-  
-  
-  fetch('airportsData.json')  
-    .then(  
-      function(response) {  
-        if (response.status !== 200) {  
-          console.warn('Looks like there was a problem. Status Code: ' + 
-            response.status);  
-          return;  
+
+
+  fetch('airportsData.json')
+    .then(
+      function (response) {
+        if (response.status !== 200) {
+          console.warn('Looks like there was a problem. Status Code: ' +
+            response.status);
+          return;
         }
-  
+
         // Examine the text in the response  
-        response.json().then(function(data) {  
+        response.json().then(function (data) {
           let option;
-      
-        for (let i = 0; i < data.length; i++) {
+
+          for (let i = 0; i < data.length; i++) {
             option = document.createElement('option');
             option.className = 'to';
             option.text = `${data[i].iataCode}, ${data[i].location}, ${data[i].country}`;
             option.value = data[i].iataCode;
             toDropdown.add(option);
-        }    
-        });  
-      }  
-    )  
-    .catch(function(err) {  
-      console.error('Fetch Error -', err);  
+          }
+        });
+      }
+    )
+    .catch(function (err) {
+      console.error('Fetch Error -', err);
     });
 }
 getArrAirports()
@@ -154,7 +154,7 @@ const fromSelect = document.getElementById('from-dropdown');
 
 fromSelect.addEventListener('change', getFromValue);
 
-function getFromValue(){ 
+function getFromValue() {
   let depAirport = fromSelect.options[fromSelect.selectedIndex].value;
   console.log(`Departure Airport: ${depAirport}`);
   return depAirport;
@@ -167,7 +167,7 @@ const toSelect = document.getElementById('to-dropdown');
 
 toSelect.addEventListener('input', getToValue);
 
-function getToValue(){ 
+function getToValue() {
   let arrAirport = fromSelect.options[toSelect.selectedIndex].value;
   console.log(`Arrival Airport: ${arrAirport}`);
   return arrAirport;
@@ -179,9 +179,9 @@ const depDateEle = document.querySelector('.dep-date');
 
 depDateEle.addEventListener('input', getDepDate);
 
-function getDepDate(){ 
+function getDepDate() {
   let departureDate = document.querySelector('.dep-date').value;
-  console.log(`Deparure Date: ${departureDate}`);
+  console.log(`Departure Date: ${departureDate}`);
   console.log(typeof departureDate);
   return departureDate;
 }
@@ -209,7 +209,7 @@ const retDateEle = document.querySelector('.ret-date');
 
 retDateEle.addEventListener('input', getRetDate);
 
-function getRetDate(){ 
+function getRetDate() {
   let returnDate = document.querySelector('.ret-date').value;
   console.log(`Return Date: ${returnDate}`);
   return returnDate;
@@ -230,7 +230,7 @@ const findFlights = document.getElementById('form-submit');
 
 findFlights.addEventListener('submit', getflights);
 
-function getflights(e){
+function getflights(e) {
 
   e.preventDefault();
 
@@ -239,36 +239,47 @@ function getflights(e){
   const depDate = getDepDate();
   const retDate = getRetDate();
 
-  const url = `http://api.aviationstack.com/v1/flights?access_key=7cc79d91db091c439e19c4a25a03f897&dep_iata=${dep}&arr_iata=${arr}`
-  
+  const url = `http://api.aviationstack.com/v1/flights?access_key=536871fc19058cff552765e03ff60587&dep_iata=${dep}&arr_iata=${arr}`
+
   console.log(url);
 
   fetch(url) /*flights API and search Parametars*/
-      
-  .then((res)=>{
-    return res.json();
-  })
-  .then((data)=>{
-    console.log(data.data);
-          
-          let output = '';
 
-          if (data.data.length > 0){
-          data.data.forEach((flight)=>{
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data.data);
 
-              output += `
+      let output = '';
+
+      if (data.data.length !== 0) {
+
+        data.data.forEach((flight) => {
+
+          if (depDate === flight.flight_date) { // filter flights by date
+            console.log(flight);
+            // console.log(flight.flight_date);
+
+            output += `
               <div class="flights-results">
-                <div >
+                <div>
+                  <p class="dep-icon"><img class="icon" src="/img/dep.png" alt="">${flight.departure.iata}</p>
+                  <p class="arr-icon"><img class="icon" src="/img/arr.png" alt="">${flight.arrival.iata}</p>
+                </div> 
+
+                <div>
                     <p> Airline: (${flight.airline.iata}) ${flight.airline.name} </p>
-                    <p> Flight Number: ${flight.airline.iata}${flight.flight.number} </p> 
+                    <p> Flight Number: ${flight.flight.iata} </p> 
                 </div>
                 
-                <div >
-                  <p> Deparcur City: ${flight.departure.iata} </p>
-                  <p> Arrival City: ${flight.arrival.iata}</p>
+                <div>
+                  <p> Terminal: ${flight.departure.terminal} </p>
+                  <p> Terminal: ${flight.arrival.terminal}</p>
                 </div> 
+
                 
-                <div >
+                <div>
                   <p> Departure Date & Time: ${flight.departure.scheduled}</p>
                   <p> Arrival Date & Time: ${flight.arrival.scheduled}</p>
                 </div> 
@@ -277,18 +288,26 @@ function getflights(e){
               </div>
 
               `
-            document.getElementById('flights').innerHTML = output; 
+          }
 
-          });
-        }
-        else{
+        });
+
+        if (output.length === 0) {
           output = `
           <p class='no-flights'> There is no flight found</p> 
           `
-          document.getElementById('flights').innerHTML = output; 
         }
-          
-      });     
+
+        document.getElementById('flights').innerHTML = output;
+      }
+
+      else {
+        output = `
+          <p class='no-flights'> There is no flight found</p> 
+          `
+        document.getElementById('flights').innerHTML = output;
+      }
+    });
 }
 //----------------------------------------------------------------
 
@@ -300,7 +319,8 @@ function getflights(e){
 // selectFlightBtn.addEventListener('click', selectFlight);
 
 // function selectFlight() {
-//   document.getElementById('flights').classList.remove("hidden"); 
-//   document.getElementById('select-flight-btn').classList.add(hidden);
-//   document.getElementById('select-flight-btn').innerHTML = `<p> hallo</p>`;
+//   // document.getElementById('home-section').classList.remove("hidden"); 
+//   // document.getElementById('select-flight').classList.add(hidden);
+//   // document.getElementById('select-flight').innerHTML = `<p> hallo</p>`;
+//   alert('hi')
 // }

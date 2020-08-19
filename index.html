@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>Let's Fly</title>
 </head>
+
 <body>
 
 
@@ -30,14 +32,14 @@
             <div class="main-form ">
                 <h2 class="head">Find your Flight:</h2>
                 <form id="form-submit" action="">
-    
+
                     <div class="input-from">
                         <label for="from">Leaving From:</label>
-                        <select id="from-dropdown" name="from" type="text" ></select>   
+                        <select id="from-dropdown" name="from" type="text"></select>
                     </div>
                     <div class="input-to">
                         <label for="to">Going To:</label>
-                        <select id="to-dropdown" name="to"></select>                        
+                        <select id="to-dropdown" name="to"></select>
                     </div>
                     <div class="input-dep-date">
                         <label for="dep-date">Departing On:</label>
@@ -56,11 +58,11 @@
                             </div>
                             <div class="round-trip">
                                 <label for="round-trip">Round Trip</label>
-                                <input type="radio" name="trip" id="round-trip" value="round-trip"  required="required">
+                                <input type="radio" name="trip" id="round-trip" value="round-trip" required="required">
                             </div>
                             <div class="multi-trip">
                                 <label for="multitrip">Multi Trips</label>
-                                <input type="radio" name="trip" id="multitrip" value="multi-trip"  required="required">
+                                <input type="radio" name="trip" id="multitrip" value="multi-trip" required="required">
                             </div>
                         </div>
                     </div>
@@ -70,16 +72,19 @@
                         <div class="class-select flex">
                             <div class="f-class">
                                 <label for="f-class">F - Class</label>
-                                <input type="radio" name="class-select" id="f-class" value="f-class" required="required">
+                                <input type="radio" name="class-select" id="f-class" value="f-class"
+                                    required="required">
                             </div>
                             <div class="b-class">
                                 <label for="b-class">B - Class</label>
-                                <input type="radio" name="class-select" id="b-class" value="b-class" required="required">
+                                <input type="radio" name="class-select" id="b-class" value="b-class"
+                                    required="required">
                             </div>
 
                             <div class="e-class">
                                 <label for="e-class">E - Class</label>
-                                <input type="radio" name="class-select" id="e-class" value="e-class" checked="checked" required="required">
+                                <input type="radio" name="class-select" id="e-class" value="e-class" checked="checked"
+                                    required="required">
                             </div>
                         </div>
                     </div>
@@ -89,7 +94,8 @@
                         <div class="age-select flex">
                             <div class="adult">
                                 <label for="adult">Adult</label>
-                                <input type="number" name="age-select" id="adult" value="1" min="1" max="8" required="required">
+                                <input type="number" name="age-select" id="adult" value="1" min="1" max="8"
+                                    required="required">
                             </div>
 
                             <div class="child">
@@ -108,10 +114,11 @@
                         <button type="submit" id="form-submit" class="btn">Order Ticket Now</button>
                     </div>
                 </form>
-            </div>   
+            </div>
 
-            <div id="flights" ></div>
-            <div id="select-flight" ></div>
+            <div id="flights"></div>
+
+            <div id="select-flight"></div>
 
         </section>
 
@@ -128,21 +135,24 @@
         </section>
 
         <section id="help-section" class="hidden">
-            <h2>Frequently asked questions</h2> <hr>
-            <h4>Can you help me find a flight?</h4> 
-            <p>Find flights by searching for a flight number, callsign, or registration. There may be several reasons why a flight cannot be found. Either it has not taken off yet or has already landed. Also, not all aircraft are equipped with the correct transponder to be tracked by Flightradar24, or the flight could be flying outside our coverage area.
+            <h2>Frequently asked questions</h2>
+            <hr>
+            <h4>Can you help me find a flight?</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore distinctio voluptatem explicabo, eos pariatur consequuntur quia harum. Id corrupti, facilis enim hic exercitationem odio est iste deleniti, ratione, at repellendus.
+            </p>
+            <hr>
 
-            We are unable to assist in searches for individual flights or aircraft.</p> <hr>
-            
-            <h4>Do you know why a flight is or was delayed?</h4> 
-            <p>In some cases, we receive advance delay information, but we do not have any information about reason for the delay. For all questions about delays please contact the airline or airport directly. We are unable to issue flight delay certificates.</p> <hr>            
-            
-            <h4>I was following an aircraft when it suddenly disappeared, why?</h4> 
-            <p>In most cases, our receiver network is no longer receiving a signal from the aircraft. This tends to be more common when an aircraft is flying over large bodies of water. It can also be a technical problem somewhere. Once the aircraft flies over an area with coverage again, tracking will be resumed. Coverage in the same area can be different depending on data source and transponder type.</p> <hr>
+            <h4>Do you know why a flight is or was delayed?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nesciunt enim, provident dolores totam ab adipisci id omnis voluptatum ratione./p>
+            <hr>
 
-            <h4>Do you know why a flight is or was delayed?</h4> 
-            <p>In some cases, we receive advance delay information, but we do not have any information about reason for the delay. </p>          
-            
+            <h4>I was following an aircraft when it suddenly disappeared, why?</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore distinctio voluptatem explicabo, eos pariatur consequuntur quia harum. Id corrupti, facilis enim hic exercitationem odio est iste deleniti, ratione, at repellendus.</p>
+            <hr>
+
+            <h4>Do you know why a flight is or was delayed?</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore distinctio voluptatem explicabo, eos pariatur consequuntur quia harum. Id corrupti, facilis enim hic exercitationem odio est iste deleniti, ratione, at repellendus.</p>
+
 
         </section>
 
@@ -153,4 +163,5 @@
     <script src="js/main.js" type="module"></script>
 
 </body>
+
 </html>

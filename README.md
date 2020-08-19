@@ -1,1 +1,1 @@
-Let's Fly is a mini project to find your flights.
+Let's Fly is a mini project to find real flights.
