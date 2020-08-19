@@ -186,23 +186,6 @@ function getDepDate() {
   return departureDate;
 }
 
-// function formatDate(date) {
-//   let d = new Date(date),
-//       month = '' + (d.getMonth() + 1),
-//       day = '' + d.getDate(),
-//       year = d.getFullYear();
-
-//   if (month.length < 2) 
-//       month = '0' + month;
-//   if (day.length < 2) 
-//       day = '0' + day;
-
-//   return [year, month, day].join('-');
-// }
-// formatDate(getDepDate());
-
-// console.log(typeof formatDate());
-
 
 // Get Return Date
 const retDateEle = document.querySelector('.ret-date');
@@ -284,7 +267,7 @@ function getflights(e) {
                   <p> Arrival Date & Time: ${flight.arrival.scheduled}</p>
                 </div> 
 
-                <button type="submit" id="select-flight-btn" class="btn">Select Flight</button>    
+                <button class="btn select-flight-btn" >Select Flight</button>    
               </div>
 
               `
@@ -313,14 +296,12 @@ function getflights(e) {
 
 
 
-// Select a flight
+// Select a flight in a Modal
 // const selectFlightBtn = document.getElementById('select-flight-btn');
 
 // selectFlightBtn.addEventListener('click', selectFlight);
 
 // function selectFlight() {
-//   // document.getElementById('home-section').classList.remove("hidden"); 
-//   // document.getElementById('select-flight').classList.add(hidden);
-//   // document.getElementById('select-flight').innerHTML = `<p> hallo</p>`;
-//   alert('hi')
+//   console.log(1111111111);
 // }
+
