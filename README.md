@@ -1,1 +1,1 @@
-Let's Fly is a mini project to find real flights.
+Let's Fly is a mini project in (HTML5, CSS, Javascript) to find real flights using API.

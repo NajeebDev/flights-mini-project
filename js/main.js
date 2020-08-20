@@ -55,7 +55,8 @@ window.onload = function WindowLoad() { // load Home page
 }
 //----------------------------------------------------------------
 
-// get airports gata from json file into (From) element
+
+// get airports Data from json file into (From) element
 let fromDropdown = document.getElementById('from-dropdown');
 
 function getDepAirports() {
@@ -102,7 +103,7 @@ getDepAirports()
 
 
 
-// get airports data from json file into (To) element
+// get airports Data from json file into (To) element
 let toDropdown = document.getElementById('to-dropdown');
 
 function getArrAirports() {
@@ -182,7 +183,7 @@ depDateEle.addEventListener('input', getDepDate);
 function getDepDate() {
   let departureDate = document.querySelector('.dep-date').value;
   console.log(`Departure Date: ${departureDate}`);
-  console.log(typeof departureDate);
+  // console.log(typeof departureDate);
   return departureDate;
 }
 
@@ -197,13 +198,6 @@ function getRetDate() {
   console.log(`Return Date: ${returnDate}`);
   return returnDate;
 }
-
-
-// Get the Trip type (Rount Trip or One way)
-
-
-
-
 //----------------------------------------------------------------
 
 
@@ -212,7 +206,7 @@ function getRetDate() {
 const findFlights = document.getElementById('form-submit');
 
 findFlights.addEventListener('submit', getflights);
-
+console.log(findFlights);
 function getflights(e) {
 
   e.preventDefault();
